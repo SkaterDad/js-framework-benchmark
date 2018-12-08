@@ -106,7 +106,10 @@ const actions = {
     return {
       data: state.data.map((d, i) => {
         if (i % 10 === 0) {
-          d.label = `${d.label} !!!`
+          return {
+            id: d.id,
+            label: `${d.label} !!!`,
+          }
         }
         return d
       }),
